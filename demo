@@ -1,0 +1,20 @@
+<a href="{{  block.settings.button_link }}" class="new-w sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element"  data-initialized="true">
+{{ block.settings.button_label }} Click Here
+</a>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('a.new-w');
+  for (var i = 0; i < links.length; ++i) {
+    links[i].addEventListener('click', function(e) {
+      e.preventDefault();
+    
+      window.open(this.getAttribute('href'), '', [
+        'width=' + screen.availWidth,
+        'height=' + screen.availHeight
+      ]);
+      
+    });
+  }
+})();
+</script>
